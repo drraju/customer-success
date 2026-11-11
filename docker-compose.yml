@@ -1,0 +1,14 @@
+name: customer-success
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_PATH: /data/cs.db
+    volumes:
+      - cs-data:/data
+
+volumes:
+  cs-data:
